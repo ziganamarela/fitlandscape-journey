@@ -21,9 +21,11 @@ const Navbar = () => {
     };
   }, []);
 
+  // Updated nav links to match the image
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
+    { name: 'PowerTower', href: '#introduction' },
+    { name: 'Accessories', href: '#features' },
+    { name: 'Bundle', href: '#pricing' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'FAQ', href: '#faq' },
   ];
@@ -42,8 +44,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-fitBlack font-bold text-2xl">
-            FitAnywhere
+          <a href="#" className="font-bold text-2xl">
+            <span className="text-black font-bold">Fit</span>
+            <span className="text-fitYellow font-bold">Anywhere</span>
           </a>
         </div>
 
@@ -76,30 +79,49 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Styled to match the image */}
       <div
-        className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
-        <div className="container mx-auto py-4 flex flex-col space-y-6">
+        <div className="p-4 flex justify-between items-center border-b border-gray-100">
+          <div className="flex items-center">
+            <a href="#" className="font-bold text-2xl">
+              <span className="text-black font-bold">Fit</span>
+              <span className="text-fitYellow font-bold">Anywhere</span>
+            </a>
+          </div>
+          <button 
+            onClick={toggleMobileMenu} 
+            className="text-fitBlack"
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <div className="p-6 flex flex-col">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-fitBlack hover:text-fitYellow transition-colors duration-300"
+              className="py-4 text-xl font-medium text-fitBlack border-b border-gray-100 hover:text-fitYellow"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="#order"
-            className="button-primary inline-block text-center"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            ORDER NOW
-          </a>
+          
+          <div className="mt-8">
+            <a
+              href="#order"
+              className="w-full block py-4 bg-black text-white font-medium text-center rounded-full hover:bg-gray-900 transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              ORDER NOW
+            </a>
+          </div>
         </div>
       </div>
     </nav>
