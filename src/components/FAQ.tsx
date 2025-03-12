@@ -11,7 +11,7 @@ const FAQ = () => {
     {
       id: 'installation',
       question: 'How easy is the PowerTower to set up?',
-      answer: 'The PowerTower features a tool-free setup that takes less than 2 minutes. Simply unfold, lock the main components, and you're ready to begin your workout. No screws, no bolts, no hassle.'
+      answer: `The PowerTower features a tool-free setup that takes less than 2 minutes. Simply unfold, lock the main components, and you're ready to begin your workout. No screws, no bolts, no hassle.`
     },
     {
       id: 'boxing',
@@ -21,7 +21,7 @@ const FAQ = () => {
     {
       id: 'delivery',
       question: 'When will my FitAnywhere Bundle be delivered?',
-      answer: 'For the Spring 2025 launch, we're taking pre-orders now with expected delivery in March-April 2025. Each order is fulfilled in the sequence received, and you'll receive detailed tracking information once your bundle ships.'
+      answer: `For the Spring 2025 launch, we're taking pre-orders now with expected delivery in March-April 2025. Each order is fulfilled in the sequence received, and you'll receive detailed tracking information once your bundle ships.`
     },
     {
       id: 'resistance',
