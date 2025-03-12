@@ -26,10 +26,10 @@ const Hero = () => {
     };
   }, []);
 
-  const scrollToOrder = () => {
-    const orderSection = document.getElementById('order');
-    if (orderSection) {
-      orderSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToNextSection = () => {
+    const introSection = document.getElementById('introduction');
+    if (introSection) {
+      introSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -42,22 +42,23 @@ const Hero = () => {
           <div className="space-y-6">
             <div className="parallax-layer">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-fitBlack animate-fade-in" style={{animationDelay: '0.2s'}}>
-                The Ultimate <span className="text-fitYellow">Minimalist</span> Fitness Solution
+                Break free <span className="text-fitYellow">&</span> <br className="hidden sm:block" />
+                train your <span className="text-fitYellow">way</span>
               </h1>
             </div>
             
             <div className="parallax-layer">
               <p className="text-lg md:text-xl text-fitBlack/70 max-w-2xl mx-auto mt-6 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                Train Smarter. Live Better. Elevate Your Lifestyle.
+                Your portable gym that adapts to your lifestyle.
               </p>
             </div>
             
             <div className="parallax-layer mt-12 animate-fade-in" style={{animationDelay: '0.6s'}}>
               <button 
-                onClick={scrollToOrder}
+                onClick={scrollToNextSection}
                 className="button-primary text-lg px-8 py-4 shadow-lg inline-flex items-center gap-2 transform hover:scale-105 transition-all duration-300"
               >
-                GET THE COMPLETE BUNDLE NOW
+                LEARN MORE
               </button>
             </div>
           </div>
